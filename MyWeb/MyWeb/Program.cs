@@ -18,5 +18,6 @@ namespace MyWeb {
                 .ConfigureWebHostDefaults(webBuilder => {
                     webBuilder.UseStartup<Startup>();
                 });
+        
     }
 }
