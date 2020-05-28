@@ -6,4 +6,26 @@
 
 
 
+  <ItemGroup>
+    <PackageReference Include="NSwag.ApiDescription.Client" Version="13.0.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Client" Version="3.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="OpenAPIs\swagger.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <OpenApiReference Include="OpenAPIs\swagger.json" Condition="'$(ExcludeConfigFilesFromBuildOutput)'!='true'">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <SourceUri>https://localhost:5001/swagger/v1/swagger.json</SourceUri>
+    </OpenApiReference>
+  </ItemGroup>
 </Project>
