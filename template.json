@@ -20,6 +20,7 @@
   },
   "$comment_sourceName": "TODO: Source name should follow these rules: https://aka.ms/template-json-source-name. Source name may be removed if replacement for name is not required.",
   "sourceName": "Company.WebApplication1",
+  "defaultName": "ReactApp",
   "preferNameDirectory": true,  
   "postActions": [
     {
@@ -36,6 +37,11 @@
       "args":{
         "files":["Company.WebApplication1.Server/Company.WebApplication1.Server.csproj"]
       }
+    }
+  ],
+  "primaryOutputs": [
+    {
+      "path": "Company.WebApplication1.Server/Company.WebApplication1.csproj"
     }
   ]
 }
