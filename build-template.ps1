@@ -26,7 +26,7 @@ function Clean(){
 ###############################################
 # Start script here
 ###############################################
-"scriptDir: {0},{1},{2},{3}" -f $scriptDir,$srcDir,$outputDir,$templateJsonFilePath | Write-Host
+#"scriptDir: {0},{1},{2},{3}" -f $scriptDir,$srcDir,$outputDir,$templateJsonFilePath | Write-Host
 # Reset-Templates
 Clean
 
