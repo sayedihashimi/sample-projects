@@ -39,14 +39,14 @@
         }
       }
     ],
-    "primaryOutputs": [
-        {
-          "path": "Company.WebApplication1.Server/Company.WebApplication1.csproj"
-        },
-        {
-          "path": "company.webapplication1.client.esproj"
-        }
-    ],
+    // "primaryOutputs": [
+    //     {
+    //       "path": "Company.WebApplication1.Server/Company.WebApplication1.csproj"
+    //     },
+    //     {
+    //       "path": "company.webapplication1.client.esproj"
+    //     }
+    // ],
 
 
     // THINGS I MANUALLY ADDED FROM WebAPI TEMPLATE BELOW
@@ -130,6 +130,32 @@
     }
   ],
   "symbols": {
+    "lowerSourceName":{
+      "type":"derived",
+      "valueSource": "name",
+      "replaces":"company.webApplication1",
+      "valueTransform": "lowerCase",
+      "defaultValue": "defaultValue.esproj"
+    },
+    "lowerSourceNameComplete": {
+      "type": "generated",
+      "generator": "join",
+      "fileRename": "company.webapplication1.client",
+      "parameters": {
+        "symbols": [
+          {
+            "type":"ref",
+            "value": "lowerSourceName"
+          },
+          {
+            "type": "const",
+            "value": "client"
+          }
+        ],
+        "separator": ".",
+        "removeEmptyValues": true
+      }
+    },
     "auth": {
       "type": "parameter",
       "datatype": "choice",

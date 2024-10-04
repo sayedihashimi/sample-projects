@@ -1,7 +1,7 @@
 $scriptDir = split-path -parent $MyInvocation.MyCommand.Definition
 $srcDir = $scriptDir
 $templateJsonFilePath = (join-path $srcDir template.json)
-$outputDir = (Join-Path -path $scriptDir bin)
+$outputDir = (Join-Path -path $scriptDir bin\content)
 $objDir = (Join-Path -Path $scriptDir obj)
 # This is the value on my machine, it may be different on yours
 $pathToNpmCmd = "C:\Program Files\nodejs\npm.cmd"
