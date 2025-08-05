@@ -9,4 +9,9 @@ builder.AddProject<Projects.MyAspireApp_Web>("webfrontend")
     .WithReference(apiService)
     .WaitFor(apiService);
 
+builder.AddViteApp(name: "myaspireapp-react", workingDirectory: "../myaspireapp-react")
+    .WithReference(apiService)
+    .WaitFor(apiService)
+    .WithNpmPackageInstallation();
+
 builder.Build().Run();
