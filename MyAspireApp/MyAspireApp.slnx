@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="myaspireapp-react/myaspireapp-react.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="MyAspireApp.ApiService/MyAspireApp.ApiService.csproj" />
+  <Project Path="MyAspireApp.AppHost/MyAspireApp.AppHost.csproj" />
+  <Project Path="MyAspireApp.ServiceDefaults/MyAspireApp.ServiceDefaults.csproj" />
+  <Project Path="MyAspireApp.Web/MyAspireApp.Web.csproj" />
+</Solution>
