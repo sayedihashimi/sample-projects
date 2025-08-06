@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PhotoGallery.AppHost/PhotoGallery.AppHost.csproj" />
+  <Project Path="PhotoGallery.ServiceDefaults/PhotoGallery.ServiceDefaults.csproj" />
+  <Project Path="WebApplication1/WebApplication1.csproj" />
+</Solution>
