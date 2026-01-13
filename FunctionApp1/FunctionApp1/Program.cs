@@ -9,6 +9,11 @@ builder.ConfigureFunctionsWebApplication();
 
 builder.Services
     .AddApplicationInsightsTelemetryWorkerService()
-    .ConfigureFunctionsApplicationInsights();
+    .ConfigureFunctionsApplicationInsights()
+    .AddHttpClient("GitHub", client =>
+    {
+        // GitHub requires a User-Agent header on API requests.
+        client.DefaultRequestHeaders.UserAgent.ParseAdd("FunctionApp1-PrGatekeeper");
+    });
 
 builder.Build().Run();
