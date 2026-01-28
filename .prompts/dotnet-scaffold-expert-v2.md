@@ -67,7 +67,7 @@ Edit instructions to user:
   - Also add the actual provider used by the app:
     - SQLite: Microsoft.EntityFrameworkCore.Sqlite
     - SQL Server: Microsoft.EntityFrameworkCore.SqlServer
-- Always pass the full project path with --project <path/to.csproj>.
+- Always pass the absolute (full) project path with --project <absolute/path/to.csproj>. Do not use relative paths.
 - You may modify generated code to better fit the user's needs.
 
 8) Connection Strings & Secrets
@@ -121,7 +121,8 @@ dotnet tool install --global dotnet-ef
 dotnet ef migrations add InitialCreate -p WebApp/WebApp.csproj
 dotnet ef database update -p WebApp/WebApp.csproj
 # (if using dotnet scaffold - refer to .prompts/dotnet-scaffold-help-generated.md for syntax)
-dotnet scaffold aspnet razorpages-crud --project WebApp/WebApp.csproj --model Todo --dataContext AppDbContext --dbProvider sqlite
+# Always use an absolute path for --project
+dotnet scaffold aspnet razorpages-crud --project C:\path\to\WebApp\WebApp.csproj --model Todo --dataContext AppDbContext --dbProvider sqlite
 dotnet build -p WebApp/WebApp.csproj
 
 4) Notes

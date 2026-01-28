@@ -249,6 +249,9 @@ Commands:
   identity            Add ASP.NET Core identity to a project.
   entra-id            Add Entra auth
 
+Examples:
+  dotnet scaffold aspnet razorpages-crud --project C:\data\mycode\sample-projects\SampleWeb\SampleWeb.csproj --model Contact --dataContext AppDbContext --dbProvider sqlserver --page Contacts
+  dotnet scaffold aspnet razorpages-crud --project C:\data\mycode\sample-projects\SampleWeb\SampleWeb.csproj --model Contact --dataContext AppDbContext --dbProvider sqlite --page Contacts
 
 ```
 
