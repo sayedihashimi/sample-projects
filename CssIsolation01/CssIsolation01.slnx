@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="CssIsolation01/CssIsolation01.csproj" />
+  <Project Path="MVCWeb/MVCWeb.csproj" />
+</Solution>
