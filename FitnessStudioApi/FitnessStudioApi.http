@@ -1,0 +1,336 @@
+@baseUrl = http://localhost:5268
+
+### ===================== Membership Plans =====================
+
+### List all active membership plans
+GET {{baseUrl}}/api/membership-plans
+
+### Get membership plan by ID
+GET {{baseUrl}}/api/membership-plans/1
+
+### Create a new membership plan
+POST {{baseUrl}}/api/membership-plans
+Content-Type: application/json
+
+{
+  "name": "Student",
+  "description": "Discounted plan for students",
+  "durationMonths": 3,
+  "price": 19.99,
+  "maxClassBookingsPerWeek": 2,
+  "allowsPremiumClasses": false
+}
+
+### Update a membership plan
+PUT {{baseUrl}}/api/membership-plans/1
+Content-Type: application/json
+
+{
+  "name": "Basic",
+  "description": "Access to standard classes with limited weekly bookings - updated",
+  "durationMonths": 1,
+  "price": 34.99,
+  "maxClassBookingsPerWeek": 3,
+  "allowsPremiumClasses": false
+}
+
+### Deactivate a membership plan
+DELETE {{baseUrl}}/api/membership-plans/1
+
+### ===================== Members =====================
+
+### List all members
+GET {{baseUrl}}/api/members
+
+### List members with search
+GET {{baseUrl}}/api/members?search=alice&isActive=true&page=1&pageSize=10
+
+### Get member by ID (includes active membership)
+GET {{baseUrl}}/api/members/1
+
+### Register a new member
+POST {{baseUrl}}/api/members
+Content-Type: application/json
+
+{
+  "firstName": "Isabella",
+  "lastName": "Martinez",
+  "email": "isabella.martinez@email.com",
+  "phone": "555-0901",
+  "dateOfBirth": "1994-06-20",
+  "emergencyContactName": "Carlos Martinez",
+  "emergencyContactPhone": "555-0902"
+}
+
+### Update a member profile
+PUT {{baseUrl}}/api/members/1
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Johnson",
+  "email": "alice.johnson@email.com",
+  "phone": "555-0111",
+  "dateOfBirth": "1990-03-15",
+  "emergencyContactName": "Bob Johnson",
+  "emergencyContactPhone": "555-0112"
+}
+
+### Deactivate a member
+DELETE {{baseUrl}}/api/members/8
+
+### Get member's bookings (with filters)
+GET {{baseUrl}}/api/members/1/bookings?status=Confirmed&page=1&pageSize=10
+
+### Get member's upcoming bookings
+GET {{baseUrl}}/api/members/1/bookings/upcoming
+
+### Get member's membership history
+GET {{baseUrl}}/api/members/1/memberships
+
+### ===================== Memberships =====================
+
+### Create a membership (for member without one - Grace Kim, ID 7)
+POST {{baseUrl}}/api/memberships
+Content-Type: application/json
+
+{
+  "memberId": 7,
+  "membershipPlanId": 2,
+  "startDate": "2026-04-01"
+}
+
+### Get membership details
+GET {{baseUrl}}/api/memberships/1
+
+### Cancel a membership
+POST {{baseUrl}}/api/memberships/1/cancel
+
+### Freeze a membership (member 2 - Brian, active Premium)
+POST {{baseUrl}}/api/memberships/2/freeze
+Content-Type: application/json
+
+{
+  "freezeDurationDays": 14
+}
+
+### Unfreeze a membership
+POST {{baseUrl}}/api/memberships/2/unfreeze
+
+### Renew an expired membership (member 7 - Grace, expired)
+POST {{baseUrl}}/api/memberships/7/renew
+
+### ===================== Instructors =====================
+
+### List all instructors
+GET {{baseUrl}}/api/instructors
+
+### List instructors by specialization
+GET {{baseUrl}}/api/instructors?specialization=Yoga&isActive=true
+
+### Get instructor by ID
+GET {{baseUrl}}/api/instructors/1
+
+### Create an instructor
+POST {{baseUrl}}/api/instructors
+Content-Type: application/json
+
+{
+  "firstName": "Mia",
+  "lastName": "Thompson",
+  "email": "mia.thompson@zenith.com",
+  "phone": "555-1005",
+  "bio": "Former professional dancer with expertise in dance fitness and stretching.",
+  "specializations": "Dance, Stretching, Yoga",
+  "hireDate": "2026-03-01"
+}
+
+### Update an instructor
+PUT {{baseUrl}}/api/instructors/1
+Content-Type: application/json
+
+{
+  "firstName": "Sarah",
+  "lastName": "Chen",
+  "email": "sarah.chen@zenith.com",
+  "phone": "555-1001",
+  "bio": "Certified yoga instructor with 10+ years of experience in Hatha and Vinyasa yoga. Now also teaching meditation.",
+  "specializations": "Yoga, Pilates, Meditation, Stretching"
+}
+
+### Get instructor's schedule
+GET {{baseUrl}}/api/instructors/1/schedule
+
+### Get instructor's schedule with date range
+GET {{baseUrl}}/api/instructors/1/schedule?fromDate=2026-04-01&toDate=2026-04-08
+
+### ===================== Class Types =====================
+
+### List all class types
+GET {{baseUrl}}/api/class-types
+
+### List class types by difficulty
+GET {{baseUrl}}/api/class-types?difficulty=Advanced
+
+### List premium class types
+GET {{baseUrl}}/api/class-types?isPremium=true
+
+### Get class type by ID
+GET {{baseUrl}}/api/class-types/1
+
+### Create a class type
+POST {{baseUrl}}/api/class-types
+Content-Type: application/json
+
+{
+  "name": "Zumba",
+  "description": "Dance-based fitness class with Latin music",
+  "defaultDurationMinutes": 60,
+  "defaultCapacity": 25,
+  "isPremium": false,
+  "caloriesPerSession": 400,
+  "difficultyLevel": "AllLevels"
+}
+
+### Update a class type
+PUT {{baseUrl}}/api/class-types/1
+Content-Type: application/json
+
+{
+  "name": "Yoga",
+  "description": "Traditional yoga practice focusing on flexibility, strength, and mindfulness",
+  "defaultDurationMinutes": 60,
+  "defaultCapacity": 25,
+  "isPremium": false,
+  "caloriesPerSession": 280,
+  "difficultyLevel": "AllLevels"
+}
+
+### ===================== Class Schedules =====================
+
+### List all classes
+GET {{baseUrl}}/api/classes
+
+### List classes with filters
+GET {{baseUrl}}/api/classes?classTypeId=1&hasAvailability=true&page=1&pageSize=10
+
+### Get class by ID
+GET {{baseUrl}}/api/classes/1
+
+### Schedule a new class
+POST {{baseUrl}}/api/classes
+Content-Type: application/json
+
+{
+  "classTypeId": 1,
+  "instructorId": 1,
+  "startTime": "2026-04-07T15:00:00Z",
+  "endTime": "2026-04-07T16:00:00Z",
+  "capacity": 20,
+  "room": "Studio A"
+}
+
+### Update a class
+PUT {{baseUrl}}/api/classes/1
+Content-Type: application/json
+
+{
+  "classTypeId": 1,
+  "instructorId": 1,
+  "startTime": "2026-04-02T07:30:00Z",
+  "endTime": "2026-04-02T08:30:00Z",
+  "capacity": 25,
+  "room": "Studio A"
+}
+
+### Cancel a class (cascades to all bookings)
+PATCH {{baseUrl}}/api/classes/1/cancel
+Content-Type: application/json
+
+{
+  "reason": "Instructor called in sick"
+}
+
+### Get class roster
+GET {{baseUrl}}/api/classes/1/roster
+
+### Get class waitlist (class 5 - Boxing, has waitlisted members)
+GET {{baseUrl}}/api/classes/5/waitlist
+
+### Get available classes in the next 7 days
+GET {{baseUrl}}/api/classes/available
+
+### ===================== Bookings =====================
+
+### Create a booking (Alice booking HIIT)
+POST {{baseUrl}}/api/bookings
+Content-Type: application/json
+
+{
+  "classScheduleId": 1,
+  "memberId": 4
+}
+
+### Get booking details
+GET {{baseUrl}}/api/bookings/1
+
+### Cancel a booking
+POST {{baseUrl}}/api/bookings/1/cancel
+Content-Type: application/json
+
+{
+  "reason": "Cannot make it"
+}
+
+### Check in for a class
+POST {{baseUrl}}/api/bookings/1/check-in
+
+### Mark booking as no-show
+POST {{baseUrl}}/api/bookings/1/no-show
+
+### ===================== Business Rule Tests =====================
+
+### Test: Basic member tries to book a premium class (Boxing - class 5)
+### Expected: 400 Bad Request - plan does not allow premium classes
+POST {{baseUrl}}/api/bookings
+Content-Type: application/json
+
+{
+  "classScheduleId": 5,
+  "memberId": 1
+}
+
+### Test: Book a class that is at capacity (Boxing - class 5, capacity 3, enrollment 3)
+### Expected: 201 but with Waitlisted status
+POST {{baseUrl}}/api/bookings
+Content-Type: application/json
+
+{
+  "classScheduleId": 5,
+  "memberId": 5
+}
+
+### Test: Member without active membership tries to book (Grace - ID 7, expired)
+### Expected: 400 Bad Request - no active membership
+POST {{baseUrl}}/api/bookings
+Content-Type: application/json
+
+{
+  "classScheduleId": 1,
+  "memberId": 7
+}
+
+### Test: Register underage member
+### Expected: 400 Bad Request - must be at least 16 years old
+POST {{baseUrl}}/api/members
+Content-Type: application/json
+
+{
+  "firstName": "Young",
+  "lastName": "Kid",
+  "email": "young.kid@email.com",
+  "phone": "555-9999",
+  "dateOfBirth": "2015-01-01",
+  "emergencyContactName": "Parent",
+  "emergencyContactPhone": "555-9998"
+}
