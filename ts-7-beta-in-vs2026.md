@@ -16,6 +16,10 @@ For more details on TypeScript 7 and the performance improvements, see the [Anno
 
 Visual Studio ships with a built-in version of the TypeScript compiler and language service for cases where the project doesn't specify a specific version to be used. Starting with this release, that built-in version is TypeScript 7 Beta. If you prefer to use a different version, you can install it in your project and **Visual Studio will always use the project-local version over the built-in one**.
 
+### Disabling TypeScript 7 native preview
+
+If you want to go back to using the previous TypeScript language service, you can disable the native preview in Visual Studio. Go to *Tools > Options > Preview Features* and search for "native preview". Uncheck the **Enable JavaScript/TypeScript Native Language Service Preview** option and restart Visual Studio.
+
 ### Using TypeScript 6.x (GA)
 
 To use the current stable release, install the [typescript](https://www.npmjs.com/package/typescript) package in your project.
