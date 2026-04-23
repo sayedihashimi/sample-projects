@@ -4,7 +4,7 @@ In Visual Studio 2026 18.6 Insiders 3 we have updated the built-in TypeScript SD
 
 **[Download Visual Studio 2026 Insiders](https://visualstudio.microsoft.com/vs/preview/)**
 
-## What is TypeScript 7 native preview?
+## What is the TypeScript 7 native preview?
 
 TypeScript 7 is a [native port of the TypeScript compiler and tools](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-beta/). This is a significant change that brings native execution speed and shared-memory parallelism to the TypeScript compiler and language service. We have seen compile time improvements of up to 10x for large code bases, along with substantially reduced memory usage. If you are working with large TypeScript or JavaScript projects, you should see a noticeable improvement across your entire development experience.
 
