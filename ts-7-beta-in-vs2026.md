@@ -8,7 +8,15 @@ In Visual Studio 2026 18.6 Insiders 3 we have updated the built-in TypeScript SD
 
 TypeScript 7 is a [native port of the TypeScript compiler and tools](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-beta/). This is a significant change that brings native execution speed and shared-memory parallelism to the TypeScript compiler and language service. We have seen compile time improvements of up to 10x for large code bases, along with substantially reduced memory usage. If you are working with large TypeScript or JavaScript projects, you should see a noticeable improvement across your entire development experience.
 
-In addition to faster compile times, the TypeScript language service has significant performance improvements as well. We have seen that the time to load projects has decreased roughly 8x. Operations like Find All References, Go to Definition, and other language service features should all be faster than before. You will spend less time waiting for the IDE to respond and more time being productive working on your applications.
+In addition to faster compile times, the TypeScript language service has significant performance improvements as well. We have seen that the time to load projects has decreased roughly 8x. The improvements are not limited to load times; you should see a general speed improvement across the board with any features which interact with the TypeScript language service. Some of the Visual Studio features that benefit from these improvements include.
+
+- **IntelliSense and completions.** Code completions and parameter info should appear faster, especially in large projects where you may have previously noticed a delay.
+- **Find All References.** Searching for references across your solution is significantly faster.
+- **Go to Definition.** Navigating to definitions is more responsive.
+- **Error diagnostics.** Squiggles and error lists update more quickly as you type.
+- **Project load times.** Opening TypeScript and JavaScript projects in Visual Studio should be noticeably faster, with load times decreasing by roughly 8x.
+
+If you are working with large code bases, you should see a noticeable improvement to your entire development experience. You will spend less time waiting for the IDE to respond and more time being productive working on your applications.
 
 For more details on TypeScript 7 and the performance improvements, see the [Announcing TypeScript 7.0 Beta](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0-beta/) blog post.
 
