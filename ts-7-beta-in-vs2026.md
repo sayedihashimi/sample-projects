@@ -50,7 +50,6 @@ In both cases, Visual Studio will detect the version in your `node_modules` and 
 
 TypeScript 7 brings significant performance improvements to Visual Studio, and we are continuing to refine the experience. Below are the known issues that we are actively working on. This is not an exhaustive list.
 
-- **IntelliSense.** You may notice completions not appearing in some cases, or auto-imports and signature help not yet working as expected. We are closing the gap with the existing experience.
 - **Diagnostics.** Some suggestion diagnostics (green squiggles) may not show up yet, and the "Only report diagnostics for open files" setting may not be fully honored.
 - **Code Actions & Refactoring.** Quick fixes (Ctrl+.) and Organize Imports are not available for all scenarios yet. We are actively adding support for more code actions.
 - **Navigation & Search.** Find All References, CodeLens, navigation bar, and workspace symbol search may return incomplete or ungrouped results. These are being improved.
