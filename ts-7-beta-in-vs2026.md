@@ -51,7 +51,6 @@ In both cases, Visual Studio will detect the version in your `node_modules` and 
 TypeScript 7 brings significant performance improvements to Visual Studio, and we are continuing to refine the experience. Below are the known issues that we are actively working on. This is not an exhaustive list.
 
 - **IntelliSense.** You may notice completions not appearing in some cases. In `.cshtml` files, the TypeScript completion list may not appear inside a `<script>` tag. When accepting a completion for the last argument of a function, the closing parenthesis may be removed. Pressing Ctrl+Space can work around this.
-- **Auto-imports.** Typing a symbol exported from another file does not trigger auto-import suggestions. You may see error TS2304 "Cannot find name" instead.
 - **Code Actions & Refactoring.** Quick fixes (Ctrl+.) are not available yet. Only Copilot AI-based suggestions may appear. The Organize Imports command (Ctrl+R, Ctrl+G) is also not available.
 - **Navigation & Search.** The navigation bar dropdowns at the top of the editor do not show document symbols. Find All References (Shift+F12) shows a flat list without semantic grouping (read/write/declaration), and cross-file references may be incomplete. Code search results may show mismatched titles and descriptions.
 - **CodeLens.** Reference counts (e.g., "19 references") do not appear above interface and class declarations.
@@ -59,7 +58,6 @@ TypeScript 7 brings significant performance improvements to Visual Studio, and w
 - **Snippets.** Insert Snippet (Ctrl+K, Ctrl+X) does not work in JavaScript files.
 - **JSDoc.** Typing `/**` above a function with parameters does not auto-generate the JSDoc template with `@param` entries.
 - **Formatting.** Unchecking "Format on open block {" in *Tools > Options > Text Editor > JavaScript/TypeScript > Formatting* does not take effect.
-- **Breakpoints.** Adding a breakpoint in a TypeScript file does not highlight the code line as expected.
 - **Task List.** If a TypeScript file contains both a TODO comment and a variable named "TODO", the Task List may incorrectly show duplicate tasks.
 - **File and folder rename.** Renaming a file or folder in a TypeScript project does not consistently update import paths in other files.
 - **File watching.** When files are modified outside of Visual Studio, changes are not detected until the file is opened and modified inside the IDE. Errors from external edits will not appear in the Error List.
